@@ -203,16 +203,17 @@
   #looking .sec-head p { color: rgba(255,255,255,0.9); }
   #looking .sec-eyebrow { background: rgba(255,255,255,0.25); color: #fff; }
   .want-ad {
-    background: #fff; color: var(--ink); border-radius: 24px; padding: 40px;
+    background: #fff; color: var(--ink); border-radius: 20px; padding: 24px 28px;
     box-shadow: var(--card-shadow);
+    max-width: 480px; margin: 0 auto;
   }
-  .want-grid { display: flex; gap: 30px; flex-wrap: wrap; }
-  .want-grid > div { flex: 1 1 260px; }
+  .want-grid { display: flex; gap: 14px; flex-wrap: wrap; }
+  .want-grid > div { flex: 1 1 200px; }
   @media (max-width: 700px) { .want-grid { flex-direction: column; } }
-  .want-grid h4 { font-family: 'Fredoka', sans-serif; font-size: 16px; margin-bottom: 10px; }
-  .want-grid ul { padding-left: 20px; font-size: 14.5px; color: var(--ink-soft); }
-  .want-grid li { margin-bottom: 6px; }
-  .cta-row { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .want-grid h4 { font-family: 'Fredoka', sans-serif; font-size: 14.5px; margin-bottom: 8px; }
+  .want-grid ul { padding-left: 18px; font-size: 13px; color: var(--ink-soft); }
+  .want-grid li { margin-bottom: 5px; }
+  .cta-row { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; }
   .btn {
     display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 700;
     text-decoration: none; font-size: 14.5px; box-shadow: var(--card-shadow);
@@ -263,7 +264,7 @@
         <div class="note">Coffee-powered ☕</div>
         <div class="note">Meme enthusiast 😄</div>
         <div class="note">Sticky-note addict 📝</div>
-        <div class="note">Platform &amp; AI nerd 🤖</div>
+        <div class="note">Platform &amp; AI enthusiast 🤖</div>
       </div>
       <div class="quote-card">
         "If Carmen were an Instagram Reel, it would be over in one second — too much energy to fit in 30."
@@ -289,10 +290,10 @@
           <span class="role">Senior Product Manager <span class="co">— Lufthansa Industry Solutions</span></span>
           <span class="dates">FEB 2024 — PRESENT</span>
           <ul>
-            <li>Set up the discovery methodology for new internal AI products (AI Offer, QR Code Power Inspector)</li>
-            <li>Škoda SANDRA — connecting stakeholders, dev, test &amp; incident teams; harmonised it across VW Group brands</li>
-            <li>VW One Hub — PM for a 15-person team running 10+ backend services, led the Google Cloud migration and the India team transition</li>
-            <li>Now on Ford-VW Allianz — Core, MBSE, WLTP data consistency</li>
+            <li>Own product strategy and roadmaps for complex B2B software, translating regulatory and technical requirements into delivery plans</li>
+            <li>Set up a discovery methodology for new internal AI product concepts, since applied across multiple initiatives</li>
+            <li>Act as the connection point between stakeholders, engineering, and business across several client accounts</li>
+            <li>Currently the interface between the cooperation and Ford, balancing partnership health with data reliability</li>
           </ul>
         </div>
       </div>
@@ -303,10 +304,10 @@
           <span class="role">Senior Product Manager, Lead BA <span class="co">— ThoughtWorks</span></span>
           <span class="dates">SEPT 2019 — DEC 2023</span>
           <ul>
-            <li>Atlas — took a ticket-driven support team to a self-service platform for 100+ engineers, 10+ teams</li>
-            <li>Fluffy IAM MVP — discovery to delivery in 6 months for TIER</li>
-            <li>Lead BA of the OTR Runtime domain — people management across 2 teams, Italy/Spain market expansion discovery</li>
-            <li>Pocket Calculator, Bosch VSM &amp; coaching, ThoughtWorks University trainer</li>
+            <li>Led product strategy and technical roadmaps for large enterprise accounts, balancing compliance, technical debt, and platform scalability</li>
+            <li>Grew from owning one platform domain to leading a team through organisational scaling, with direct people management responsibility</li>
+            <li>Coached and trained product managers and business analysts as a ThoughtWorks University trainer</li>
+            <li>Partnered directly with account leadership on cross-team, account-wide technical planning</li>
           </ul>
         </div>
       </div>
@@ -317,9 +318,9 @@
           <span class="role">Project Lead, Product Management <span class="co">— Motionlogic / Deutsche Telekom</span></span>
           <span class="dates">NOV 2017 — AUG 2019</span>
           <ul>
-            <li>Owned a mobility data platform turning billions of telecom signals into analytics products</li>
-            <li>Nissan EV charging-location analytics, Origin-Destination &amp; Dwell-Time analytics</li>
-            <li>VisitBerlin Tableau dashboards, Telia 4-country onboarding</li>
+            <li>Owned strategy, roadmap, and operational performance for an enterprise mobility data platform</li>
+            <li>Partnered with Data Science and Engineering to translate raw telecom data into customer-facing analytics products</li>
+            <li>Managed platform reliability and data quality, working directly with enterprise customers across industries</li>
           </ul>
         </div>
       </div>
@@ -330,9 +331,9 @@
           <span class="role">R&amp;D Engineer &amp; Digitalisation PM <span class="co">— Mercedes-Benz</span></span>
           <span class="dates">NOV 2010 — SEPT 2017</span>
           <ul>
-            <li>QDA integration in prototype manufacturing — cut manual effort by ~80%</li>
-            <li>Berlin Innovation Lab core member</li>
-            <li>Six Sigma training applied to an e-water-pump redesign, 20% weight/cost reduction</li>
+            <li>Drove digital transformation of engineering and quality assurance processes</li>
+            <li>Partnered with engineering, manufacturing, and quality teams to replace manual workflows with scalable tooling</li>
+            <li>Active member of the Berlin Innovation Lab, contributing to new technology and process initiatives</li>
           </ul>
         </div>
       </div>
@@ -351,43 +352,43 @@
     <div class="grid">
       <div class="proj-card c-coral reveal">
         <span class="proj-tag">Developer Platforms</span>
-        <h3>Atlas</h3>
-        <p>Converted a reactive, ticket-driven support team into a self-service internal developer platform for 100+ engineers across 10+ teams — service catalogue, adoption metrics, and a technical roadmap done with Engineering, Architecture, and Security.</p>
+        <h3>Atlas: Platform-as-a-Product Transformation</h3>
+        <p>Converted a reactive, ticket-driven support team into a self-service developer platform for 100+ engineers across 10+ teams, building the service catalogue, adoption metrics, and technical roadmap that made the change durable.</p>
       </div>
       <div class="proj-card c-lav reveal">
         <span class="proj-tag">Developer Platforms</span>
-        <h3>Fluffy IAM MVP</h3>
-        <p>Ran discovery with IAM experts and engineering for TIER — tested a 3-segment assumption, found the data disagreed, and refocused the roadmap around 2 validated groups. Discovery to MVP in 6 months.</p>
+        <h3>OTR Runtime Domain</h3>
+        <p>Led the Runtime domain as it scaled from two teams to three within the One Touch Retail account, partnering with the account's Principal Product Manager and Principal Tech Lead on the account-wide technical roadmap.</p>
       </div>
       <div class="proj-card c-sky reveal">
-        <span class="proj-tag">Enterprise Modernisation</span>
-        <h3>VW One Hub — GCP Migration</h3>
-        <p>Owned the roadmap for migrating a 15-person team's backend services to Google Cloud, presenting engineering leadership with trade-off scenarios instead of a single plan.</p>
+        <span class="proj-tag">Developer Platforms</span>
+        <h3>Fluffy: Authentication &amp; Authorization MVP</h3>
+        <p>Took an IAM product from discovery to delivery in six months for TIER, testing an initial assumption against real usage data and refocusing the roadmap once the evidence disagreed with the original plan.</p>
       </div>
       <div class="proj-card c-mint reveal">
-        <span class="proj-tag">Mobility &amp; Data</span>
-        <h3>Motionlogic × Nissan</h3>
-        <p>Used origin-destination and routing analytics from billions of anonymised telecom signals to guide EV charging-infrastructure placement.</p>
+        <span class="proj-tag">Enterprise Modernisation</span>
+        <h3>VW One Hub: Google Cloud Migration</h3>
+        <p>Owned the migration roadmap for a 15-person team's backend services to Google Cloud, presenting engineering leadership with trade-off scenarios rather than a single fixed plan.</p>
       </div>
       <div class="proj-card c-sun reveal">
-        <span class="proj-tag">AI &amp; Innovation</span>
-        <h3>AI Product Insights Agent</h3>
-        <p>Built an agentic workflow (Claude, ChatGPT, Notion, n8n) that reads customer interviews and feedback, surfaces themes and adoption barriers, and supports prioritisation.</p>
+        <span class="proj-tag">Enterprise Modernisation</span>
+        <h3>Ford-VW Alliance: Cross-Company Data Interface</h3>
+        <p>Serve as the connecting point between the cooperation and Ford, balancing partnership health with data reliability across a complex backend systems landscape feeding the vehicle configurator.</p>
       </div>
       <div class="proj-card c-coral reveal">
-        <span class="proj-tag">AI &amp; Innovation</span>
-        <h3>GiftMatch</h3>
-        <p>AI-powered gift recommendation concept for a fashion retail app — MVP scope, personas, KPIs, and a forecasting approach, built as part of the Udacity AI Product Manager course.</p>
+        <span class="proj-tag">Mobility &amp; Data</span>
+        <h3>Motionlogic × Nissan: EV Charging Analytics</h3>
+        <p>Used origin-destination and routing analytics, drawn from billions of anonymised telecom signals, to guide Nissan's EV charging-infrastructure placement decisions.</p>
       </div>
       <div class="proj-card c-lav reveal">
         <span class="proj-tag">Enterprise Modernisation</span>
-        <h3>Škoda SANDRA</h3>
-        <p>The connection point between stakeholders, dev, test, and incident teams for a retail digital product — then helped harmonise it across other VW Group brands.</p>
+        <h3>Škoda SANDRA: Retail Platform Harmonisation</h3>
+        <p>Owned the connection between stakeholders, engineering, testing, and incident teams for a regulated retail product, then led its harmonisation across other VW Group brands.</p>
       </div>
       <div class="proj-card c-sky reveal">
         <span class="proj-tag">AI &amp; Innovation</span>
-        <h3>Aid Pioneers</h3>
-        <p>Ran the inception workshop for a humanitarian logistics platform — defined the MVP, users, roadmap, and logistics workflows from scratch.</p>
+        <h3>AI Product Insights Agent</h3>
+        <p>Designed and built an agentic workflow that ingests customer interviews and feedback, surfaces themes and adoption barriers, and supports prioritisation, end-to-end AI product development, independently built.</p>
       </div>
     </div>
   </div>
@@ -466,17 +467,17 @@
         <div>
           <h4>🎯 The role</h4>
           <ul>
-            <li>Senior Product Manager — platform, infrastructure, or AI-driven products</li>
-            <li>An in-house product company, not consulting or client delivery</li>
-            <li>Established: Series B+, 250+ people, real revenue</li>
+            <li>Senior PM — platform, infrastructure, or AI-driven products</li>
+            <li>A cool, in-house product company, Berlin-based</li>
+            <li>Established, not early-stage</li>
           </ul>
         </div>
         <div>
-          <h4>📍 The setup</h4>
+          <h4>🌱 The culture</h4>
           <ul>
-            <li>Based in Berlin, with flexibility and real office access</li>
-            <li>Building toward a specialisation in AI-driven platform &amp; system transformation</li>
-            <li>Long-term: heading toward freelance, one focused expertise at a time</li>
+            <li>Diversity that genuinely matters, not a slogan</li>
+            <li>A real feedback culture</li>
+            <li>Room to learn, grow, experiment, and take initiative</li>
           </ul>
         </div>
       </div>
