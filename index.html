@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carmen Chraim — Product Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FFFCF6;
+    --ink: #2B2B2E;
+    --ink-soft: #5B5A62;
+    --coral: #FF6F91;
+    --coral-deep: #E5486C;
+    --sky: #5FC1E8;
+    --sky-deep: #2E9FCB;
+    --mint: #6FD6A8;
+    --mint-deep: #3CB784;
+    --sun: #FFC94A;
+    --sun-deep: #EBA800;
+    --lav: #B79CF0;
+    --lav-deep: #9575D6;
+    --card-shadow: 4px 6px 0 rgba(43,43,46,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, .display { font-family: 'Fredoka', sans-serif; font-weight: 600; }
+  .mono { font-family: 'Space Mono', monospace; }
+  a { color: var(--coral-deep); }
+
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 90px 0; position: relative; }
+
+  /* subtle grain / dot texture on cream sections */
+  .dotted { background-image: radial-gradient(circle at 1px 1px, rgba(43,43,46,0.06) 1px, transparent 0); background-size: 16px 16px; }
+
+  /* ---------------- NAV ---------------- */
+  nav {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,252,246,0.85); backdrop-filter: blur(8px);
+    border-bottom: 2px solid rgba(43,43,46,0.08);
+  }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
+  nav .logo { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 20px; }
+  nav .logo span { color: var(--coral-deep); }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav ul a { text-decoration: none; color: var(--ink); font-weight: 600; font-size: 14.5px; }
+  nav ul a:hover { color: var(--coral-deep); }
+  .nav-toggle { display: none; }
+  @media (max-width: 760px) {
+    nav ul { display: none; }
+  }
+
+  /* ---------------- HERO / PINBOARD ---------------- */
+  .hero {
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
+  .pinboard {
+    background: #EFE3CF;
+    border-radius: 28px;
+    padding: 56px 48px;
+    position: relative;
+    box-shadow: var(--card-shadow);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(43,43,46,0.035) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 27px, rgba(43,43,46,0.035) 28px);
+  }
+  .hero-inner { display: flex; gap: 48px; align-items: center; flex-wrap: wrap; }
+  .hero-avatar {
+    width: 168px; height: 168px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--sun));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 64px; color: #fff;
+    box-shadow: 0 6px 0 rgba(43,43,46,0.12);
+    flex-shrink: 0;
+    border: 5px solid var(--cream);
+  }
+  .hero-text { flex: 1; min-width: 280px; }
+  .eyebrow-pin {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--coral); color: #fff; font-weight: 700; font-size: 12.5px;
+    letter-spacing: 0.5px; padding: 5px 14px; border-radius: 20px;
+    transform: rotate(-2deg); margin-bottom: 14px;
+  }
+  .hero h1 { font-size: 44px; line-height: 1.1; margin-bottom: 8px; }
+  .hero .tagline { font-size: 18px; color: var(--ink-soft); font-style: italic; margin-bottom: 18px; max-width: 480px; }
+  .hero .bio-line { font-size: 15.5px; margin-bottom: 6px; }
+  .hero .langs { margin-top: 14px; font-size: 13.5px; color: var(--ink-soft); }
+
+  .notes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+  .note {
+    padding: 12px 16px; border-radius: 6px; font-size: 13.5px; font-weight: 600;
+    box-shadow: var(--card-shadow); position: relative; max-width: 220px;
+  }
+  .note::before {
+    content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%);
+    width: 12px; height: 12px; border-radius: 50%; background: rgba(43,43,46,0.35);
+    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  }
+  .note:nth-child(1) { background: var(--sun); transform: rotate(-3deg); }
+  .note:nth-child(2) { background: var(--sky); color: #fff; transform: rotate(2deg); }
+  .note:nth-child(3) { background: var(--mint); transform: rotate(-1.5deg); }
+  .note:nth-child(4) { background: var(--lav); color: #fff; transform: rotate(2.5deg); }
+  .note:nth-child(5) { background: var(--coral); color: #fff; transform: rotate(-2deg); }
+  .note:hover { transform: scale(1.06) rotate(0deg); transition: transform 0.2s ease; }
+
+  .quote-card {
+    margin-top: 30px; background: #fff; border-radius: 16px; padding: 18px 22px;
+    box-shadow: var(--card-shadow); font-style: italic; color: var(--ink-soft); font-size: 14.5px;
+    max-width: 560px; border-left: 5px solid var(--coral);
+  }
+
+  /* ---------------- SECTION HEADERS ---------------- */
+  .sec-head { margin-bottom: 48px; }
+  .sec-eyebrow {
+    display: inline-block; font-family: 'Space Mono', monospace; font-size: 12px;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 20px; margin-bottom: 10px;
+  }
+  .sec-head h2 { font-size: 34px; }
+  .sec-head p { color: var(--ink-soft); font-size: 15.5px; margin-top: 6px; max-width: 560px; }
+
+  /* ---------------- TIMELINE ---------------- */
+  #timeline { background: #FBF1E3; }
+  .tl { position: relative; padding-left: 34px; }
+  .tl::before {
+    content: ""; position: absolute; left: 10px; top: 6px; bottom: 6px; width: 4px;
+    background: linear-gradient(180deg, var(--sky), var(--mint), var(--sun), var(--coral));
+    border-radius: 4px;
+  }
+  .tl-item { position: relative; margin-bottom: 40px; }
+  .tl-item:last-child { margin-bottom: 0; }
+  .tl-dot {
+    position: absolute; left: -34px; top: 4px; width: 22px; height: 22px; border-radius: 50%;
+    border: 4px solid var(--cream); box-shadow: 0 0 0 2px rgba(43,43,46,0.12);
+  }
+  .tl-card { background: #fff; border-radius: 16px; padding: 20px 24px; box-shadow: var(--card-shadow); }
+  .tl-card .role { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 19px; }
+  .tl-card .co { font-weight: 700; }
+  .tl-card .dates { font-family: 'Space Mono', monospace; font-size: 12.5px; color: var(--ink-soft); margin-bottom: 10px; display: block; }
+  .tl-card ul { padding-left: 20px; font-size: 14.5px; color: var(--ink-soft); }
+  .tl-card li { margin-bottom: 4px; }
+
+  /* ---------------- PORTFOLIO ---------------- */
+  #portfolio { background: var(--cream); }
+  .grid { display: flex; flex-wrap: wrap; gap: 22px; }
+  .proj-card {
+    flex: 1 1 260px; min-width: 260px;
+    border-radius: 20px; padding: 24px; box-shadow: var(--card-shadow);
+    display: flex; flex-direction: column; gap: 10px;
+    transition: transform 0.18s ease;
+  }
+  .proj-card:hover { transform: translateY(-5px); }
+  .proj-tag {
+    align-self: flex-start; font-family: 'Space Mono', monospace; font-size: 10.5px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    background: rgba(255,255,255,0.6); padding: 3px 10px; border-radius: 20px;
+  }
+  .proj-card h3 { font-size: 19px; }
+  .proj-card p { font-size: 14px; color: var(--ink); opacity: 0.85; }
+
+  .c-sky { background: #DFF3FB; }
+  .c-mint { background: #DEF6EA; }
+  .c-sun { background: #FFF3D6; }
+  .c-lav { background: #EFE7FC; }
+  .c-coral { background: #FFE3EA; }
+
+  /* ---------------- SKILLS ---------------- */
+  #skills { background: #F3EFFB; }
+  .skill-group { margin-bottom: 30px; }
+  .skill-group h3 {
+    font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .skill-group .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+  .pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    padding: 8px 16px; border-radius: 30px; font-size: 13.5px; font-weight: 600;
+    background: #fff; box-shadow: var(--card-shadow);
+  }
+
+  /* ---------------- LOOKING FOR ---------------- */
+  #looking { background: linear-gradient(160deg, var(--lav) 0%, var(--sky) 100%); color: #fff; }
+  #looking .sec-head p { color: rgba(255,255,255,0.9); }
+  #looking .sec-eyebrow { background: rgba(255,255,255,0.25); color: #fff; }
+  .want-ad {
+    background: #fff; color: var(--ink); border-radius: 24px; padding: 40px;
+    box-shadow: var(--card-shadow);
+  }
+  .want-grid { display: flex; gap: 30px; flex-wrap: wrap; }
+  .want-grid > div { flex: 1 1 260px; }
+  @media (max-width: 700px) { .want-grid { flex-direction: column; } }
+  .want-grid h4 { font-family: 'Fredoka', sans-serif; font-size: 16px; margin-bottom: 10px; }
+  .want-grid ul { padding-left: 20px; font-size: 14.5px; color: var(--ink-soft); }
+  .want-grid li { margin-bottom: 6px; }
+  .cta-row { margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 12px 24px; border-radius: 30px; font-weight: 700;
+    text-decoration: none; font-size: 14.5px; box-shadow: var(--card-shadow);
+  }
+  .btn-primary { background: var(--coral); color: #fff; }
+  .btn-secondary { background: #fff; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
+
+  footer { text-align: center; padding: 34px 0; font-size: 13px; color: var(--ink-soft); }
+
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Carmen<span>.</span></div>
+    <ul>
+      <li><a href="#hero">Hi</a></li>
+      <li><a href="#timeline">Journey</a></li>
+      <li><a href="#portfolio">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#looking">Let's talk</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="hero" class="hero dotted">
+  <div class="wrap">
+    <div class="pinboard reveal">
+      <div class="hero-inner">
+        <div class="hero-avatar">CC</div>
+        <div class="hero-text">
+          <span class="eyebrow-pin">📌 pinned to the board</span>
+          <h1>Hi, I'm Carmen Chraim</h1>
+          <p class="tagline">Turning ambiguity into structure in technical product environments.</p>
+          <p class="bio-line">38 years old · originally from Lebanon 🇱🇧 · based in Berlin 🇩🇪</p>
+          <p class="bio-line">Solo travel enthusiast ✈️ · powered by coffee, memes, and sticky notes ☕</p>
+          <p class="bio-line">Passionate about building products that solve real problems — always curious, always learning.</p>
+          <p class="langs">Arabic (native) · English (fluent) · French (fluent) · German (C1)</p>
+        </div>
+      </div>
+      <div class="notes">
+        <div class="note">Solo traveler ✈️</div>
+        <div class="note">Coffee-powered ☕</div>
+        <div class="note">Meme enthusiast 😄</div>
+        <div class="note">Sticky-note addict 📝</div>
+        <div class="note">Platform &amp; AI nerd 🤖</div>
+      </div>
+      <div class="quote-card">
+        "If Carmen were an Instagram Reel, it would be over in one second — too much energy to fit in 30."
+        <br><span class="mono" style="font-style:normal; font-size:12px;">— peer review, not made up</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow" style="background:#FFE3EA; color:var(--coral-deep);">the journey so far</span>
+      <h2>Where I've built things</h2>
+      <p>Four companies, one throughline: turning messy, ambiguous problems into platforms, roadmaps, and shipped products.</p>
+    </div>
+
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="background:var(--coral);"></div>
+        <div class="tl-card">
+          <span class="role">Senior Product Manager <span class="co">— Lufthansa Industry Solutions</span></span>
+          <span class="dates">FEB 2024 — PRESENT</span>
+          <ul>
+            <li>Set up the discovery methodology for new internal AI products (AI Offer, QR Code Power Inspector)</li>
+            <li>Škoda SANDRA — connecting stakeholders, dev, test &amp; incident teams; harmonised it across VW Group brands</li>
+            <li>VW One Hub — PM for a 15-person team running 10+ backend services, led the Google Cloud migration and the India team transition</li>
+            <li>Now on Ford-VW Allianz — Core, MBSE, WLTP data consistency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="background:var(--sun);"></div>
+        <div class="tl-card">
+          <span class="role">Senior Product Manager, Lead BA <span class="co">— ThoughtWorks</span></span>
+          <span class="dates">SEPT 2019 — DEC 2023</span>
+          <ul>
+            <li>Atlas — took a ticket-driven support team to a self-service platform for 100+ engineers, 10+ teams</li>
+            <li>Fluffy IAM MVP — discovery to delivery in 6 months for TIER</li>
+            <li>Lead BA of the OTR Runtime domain — people management across 2 teams, Italy/Spain market expansion discovery</li>
+            <li>Pocket Calculator, Bosch VSM &amp; coaching, ThoughtWorks University trainer</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="background:var(--mint);"></div>
+        <div class="tl-card">
+          <span class="role">Project Lead, Product Management <span class="co">— Motionlogic / Deutsche Telekom</span></span>
+          <span class="dates">NOV 2017 — AUG 2019</span>
+          <ul>
+            <li>Owned a mobility data platform turning billions of telecom signals into analytics products</li>
+            <li>Nissan EV charging-location analytics, Origin-Destination &amp; Dwell-Time analytics</li>
+            <li>VisitBerlin Tableau dashboards, Telia 4-country onboarding</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item reveal">
+        <div class="tl-dot" style="background:var(--sky);"></div>
+        <div class="tl-card">
+          <span class="role">R&amp;D Engineer &amp; Digitalisation PM <span class="co">— Mercedes-Benz</span></span>
+          <span class="dates">NOV 2010 — SEPT 2017</span>
+          <ul>
+            <li>QDA integration in prototype manufacturing — cut manual effort by ~80%</li>
+            <li>Berlin Innovation Lab core member</li>
+            <li>Six Sigma training applied to an e-water-pump redesign, 20% weight/cost reduction</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+<section id="portfolio" class="dotted">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow" style="background:#DEF6EA; color:var(--mint-deep);">the sticky notes, curated</span>
+      <h2>Projects I'm proud of</h2>
+      <p>A few of the ones that shaped how I work.</p>
+    </div>
+    <div class="grid">
+      <div class="proj-card c-coral reveal">
+        <span class="proj-tag">Developer Platforms</span>
+        <h3>Atlas</h3>
+        <p>Converted a reactive, ticket-driven support team into a self-service internal developer platform for 100+ engineers across 10+ teams — service catalogue, adoption metrics, and a technical roadmap done with Engineering, Architecture, and Security.</p>
+      </div>
+      <div class="proj-card c-lav reveal">
+        <span class="proj-tag">Developer Platforms</span>
+        <h3>Fluffy IAM MVP</h3>
+        <p>Ran discovery with IAM experts and engineering for TIER — tested a 3-segment assumption, found the data disagreed, and refocused the roadmap around 2 validated groups. Discovery to MVP in 6 months.</p>
+      </div>
+      <div class="proj-card c-sky reveal">
+        <span class="proj-tag">Enterprise Modernisation</span>
+        <h3>VW One Hub — GCP Migration</h3>
+        <p>Owned the roadmap for migrating a 15-person team's backend services to Google Cloud, presenting engineering leadership with trade-off scenarios instead of a single plan.</p>
+      </div>
+      <div class="proj-card c-mint reveal">
+        <span class="proj-tag">Mobility &amp; Data</span>
+        <h3>Motionlogic × Nissan</h3>
+        <p>Used origin-destination and routing analytics from billions of anonymised telecom signals to guide EV charging-infrastructure placement.</p>
+      </div>
+      <div class="proj-card c-sun reveal">
+        <span class="proj-tag">AI &amp; Innovation</span>
+        <h3>AI Product Insights Agent</h3>
+        <p>Built an agentic workflow (Claude, ChatGPT, Notion, n8n) that reads customer interviews and feedback, surfaces themes and adoption barriers, and supports prioritisation.</p>
+      </div>
+      <div class="proj-card c-coral reveal">
+        <span class="proj-tag">AI &amp; Innovation</span>
+        <h3>GiftMatch</h3>
+        <p>AI-powered gift recommendation concept for a fashion retail app — MVP scope, personas, KPIs, and a forecasting approach, built as part of the Udacity AI Product Manager course.</p>
+      </div>
+      <div class="proj-card c-lav reveal">
+        <span class="proj-tag">Enterprise Modernisation</span>
+        <h3>Škoda SANDRA</h3>
+        <p>The connection point between stakeholders, dev, test, and incident teams for a retail digital product — then helped harmonise it across other VW Group brands.</p>
+      </div>
+      <div class="proj-card c-sky reveal">
+        <span class="proj-tag">AI &amp; Innovation</span>
+        <h3>Aid Pioneers</h3>
+        <p>Ran the inception workshop for a humanitarian logistics platform — defined the MVP, users, roadmap, and logistics workflows from scratch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow" style="background:#EFE7FC; color:var(--lav-deep);">the toolkit</span>
+      <h2>What I'm good at</h2>
+      <p>Four themes run through everything I've built.</p>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3><span class="dot" style="background:var(--coral);"></span>Developer Platforms &amp; Engineering Productivity</h3>
+      <div class="pills">
+        <span class="pill">Internal Developer Platforms</span>
+        <span class="pill">Platform-as-a-Product</span>
+        <span class="pill">CI/CD &amp; Observability</span>
+        <span class="pill">Technical Roadmaps</span>
+        <span class="pill">Identity &amp; Access Management</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3><span class="dot" style="background:var(--sky);"></span>Enterprise Platform Modernisation</h3>
+      <div class="pills">
+        <span class="pill">Cloud Migration (GCP)</span>
+        <span class="pill">Security &amp; Compliance</span>
+        <span class="pill">Cross-Border Team Transitions</span>
+        <span class="pill">Stakeholder Alignment</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3><span class="dot" style="background:var(--mint);"></span>Mobility &amp; Data Products</h3>
+      <div class="pills">
+        <span class="pill">Analytics &amp; Dashboarding</span>
+        <span class="pill">Tableau</span>
+        <span class="pill">Grafana / Datadog</span>
+        <span class="pill">Data-Driven Decisions</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3><span class="dot" style="background:var(--sun);"></span>AI &amp; Product Innovation</h3>
+      <div class="pills">
+        <span class="pill">Agentic Workflows</span>
+        <span class="pill">AI-Assisted Discovery</span>
+        <span class="pill">Copilot / Claude in daily work</span>
+        <span class="pill">Prompting &amp; Prototyping</span>
+      </div>
+    </div>
+    <div class="skill-group reveal">
+      <h3><span class="dot" style="background:var(--lav);"></span>How I work</h3>
+      <div class="pills">
+        <span class="pill">Product Discovery</span>
+        <span class="pill">Lean Value Tree</span>
+        <span class="pill">Agile / Scrum (CSPO)</span>
+        <span class="pill">People Management</span>
+        <span class="pill">Cross-Functional Leadership</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOOKING FOR ================= -->
+<section id="looking">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-eyebrow">what's next</span>
+      <h2>What I'm looking for</h2>
+      <p>Putting it out there, sticky-note style.</p>
+    </div>
+
+    <div class="want-ad reveal">
+      <div class="want-grid">
+        <div>
+          <h4>🎯 The role</h4>
+          <ul>
+            <li>Senior Product Manager — platform, infrastructure, or AI-driven products</li>
+            <li>An in-house product company, not consulting or client delivery</li>
+            <li>Established: Series B+, 250+ people, real revenue</li>
+          </ul>
+        </div>
+        <div>
+          <h4>📍 The setup</h4>
+          <ul>
+            <li>Based in Berlin, with flexibility and real office access</li>
+            <li>Building toward a specialisation in AI-driven platform &amp; system transformation</li>
+            <li>Long-term: heading toward freelance, one focused expertise at a time</li>
+          </ul>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a href="mailto:carmenchraim@gmail.com" class="btn btn-primary">Say hi 👋</a>
+        <a href="https://www.linkedin.com/in/carmen-chraim/" target="_blank" class="btn btn-secondary">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with sticky notes, coffee, and a little too much energy. Berlin, 2026.
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
