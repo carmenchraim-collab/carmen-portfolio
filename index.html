@@ -171,10 +171,16 @@
     transition: transform 0.18s ease;
   }
   .proj-card:hover { transform: translateY(-5px); }
+  .proj-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .proj-tag {
     align-self: flex-start; font-family: 'Space Mono', monospace; font-size: 10.5px;
     font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
     background: rgba(255,255,255,0.6); padding: 3px 10px; border-radius: 20px;
+  }
+  .proj-kind {
+    align-self: flex-start; font-family: 'Space Mono', monospace; font-size: 10.5px;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    background: rgba(43,43,46,0.85); color: #fff; padding: 3px 10px; border-radius: 20px;
   }
   .proj-card h3 { font-size: 19px; }
   .proj-card p { font-size: 14px; color: var(--ink); opacity: 0.85; }
@@ -205,13 +211,13 @@
   .want-ad {
     background: #fff; color: var(--ink); border-radius: 20px; padding: 24px 28px;
     box-shadow: var(--card-shadow);
-    max-width: 480px; margin: 0 auto;
+    max-width: 560px; margin: 0 auto;
   }
   .want-grid { display: flex; gap: 14px; flex-wrap: wrap; }
   .want-grid > div { flex: 1 1 200px; }
   @media (max-width: 700px) { .want-grid { flex-direction: column; } }
-  .want-grid h4 { font-family: 'Fredoka', sans-serif; font-size: 14.5px; margin-bottom: 8px; }
-  .want-grid ul { padding-left: 18px; font-size: 13px; color: var(--ink-soft); }
+  .want-grid h4 { font-family: 'Fredoka', sans-serif; font-size: 16px; margin-bottom: 9px; }
+  .want-grid ul { padding-left: 19px; font-size: 14px; color: var(--ink-soft); }
   .want-grid li { margin-bottom: 5px; }
   .cta-row { margin-top: 22px; display: flex; gap: 14px; flex-wrap: wrap; }
   .btn {
@@ -351,42 +357,42 @@
     </div>
     <div class="grid">
       <div class="proj-card c-coral reveal">
-        <span class="proj-tag">Developer Platforms</span>
+        <div class="proj-tags"><span class="proj-tag">Developer Platforms</span><span class="proj-kind">Built</span></div>
         <h3>Atlas: Platform-as-a-Product Transformation</h3>
         <p>Converted a reactive, ticket-driven support team into a self-service developer platform for 100+ engineers across 10+ teams, building the service catalogue, adoption metrics, and technical roadmap that made the change durable.</p>
       </div>
       <div class="proj-card c-lav reveal">
-        <span class="proj-tag">Developer Platforms</span>
+        <div class="proj-tags"><span class="proj-tag">Developer Platforms</span><span class="proj-kind">Managed</span></div>
         <h3>OTR Runtime Domain</h3>
         <p>Led the Runtime domain as it scaled from two teams to three within the One Touch Retail account, partnering with the account's Principal Product Manager and Principal Tech Lead on the account-wide technical roadmap.</p>
       </div>
       <div class="proj-card c-sky reveal">
-        <span class="proj-tag">Developer Platforms</span>
+        <div class="proj-tags"><span class="proj-tag">Developer Platforms</span><span class="proj-kind">Built</span></div>
         <h3>Fluffy: Authentication &amp; Authorization MVP</h3>
         <p>Took an IAM product from discovery to delivery in six months for TIER, testing an initial assumption against real usage data and refocusing the roadmap once the evidence disagreed with the original plan.</p>
       </div>
       <div class="proj-card c-mint reveal">
-        <span class="proj-tag">Enterprise Modernisation</span>
+        <div class="proj-tags"><span class="proj-tag">Enterprise Modernisation</span><span class="proj-kind">Migrated</span></div>
         <h3>VW One Hub: Google Cloud Migration</h3>
         <p>Owned the migration roadmap for a 15-person team's backend services to Google Cloud, presenting engineering leadership with trade-off scenarios rather than a single fixed plan.</p>
       </div>
       <div class="proj-card c-sun reveal">
-        <span class="proj-tag">Enterprise Modernisation</span>
+        <div class="proj-tags"><span class="proj-tag">Enterprise Modernisation</span><span class="proj-kind">Consulted</span></div>
         <h3>Ford-VW Alliance: Cross-Company Data Interface</h3>
         <p>Serve as the connecting point between the cooperation and Ford, balancing partnership health with data reliability across a complex backend systems landscape feeding the vehicle configurator.</p>
       </div>
       <div class="proj-card c-coral reveal">
-        <span class="proj-tag">Mobility &amp; Data</span>
-        <h3>Motionlogic × Nissan: EV Charging Analytics</h3>
-        <p>Used origin-destination and routing analytics, drawn from billions of anonymised telecom signals, to guide Nissan's EV charging-infrastructure placement decisions.</p>
+        <div class="proj-tags"><span class="proj-tag">Enterprise Modernisation</span><span class="proj-kind">Built</span></div>
+        <h3>Pocket Calculator: Vehicle Buildability Tool</h3>
+        <p>Led design and delivery with a team of 8 developers and a UX designer, running A/B tests on package-code grouping, user journey, and interface choices to give business stakeholders real-time buildability feedback.</p>
       </div>
       <div class="proj-card c-lav reveal">
-        <span class="proj-tag">Enterprise Modernisation</span>
+        <div class="proj-tags"><span class="proj-tag">Enterprise Modernisation</span><span class="proj-kind">Consulted</span></div>
         <h3>Škoda SANDRA: Retail Platform Harmonisation</h3>
         <p>Owned the connection between stakeholders, engineering, testing, and incident teams for a regulated retail product, then led its harmonisation across other VW Group brands.</p>
       </div>
       <div class="proj-card c-sky reveal">
-        <span class="proj-tag">AI &amp; Innovation</span>
+        <div class="proj-tags"><span class="proj-tag">AI &amp; Innovation</span><span class="proj-kind">Built</span></div>
         <h3>AI Product Insights Agent</h3>
         <p>Designed and built an agentic workflow that ingests customer interviews and feedback, surfaces themes and adoption barriers, and supports prioritisation, end-to-end AI product development, independently built.</p>
       </div>
@@ -462,22 +468,25 @@
       <p>Putting it out there, sticky-note style.</p>
     </div>
 
-    <div class="want-ad reveal">
+    <div class="want-ad reveal" style="max-width:680px;">
+      <p style="font-size:16px; line-height:1.6; margin-bottom:22px; padding-bottom:20px; border-bottom:2px dashed rgba(43,43,46,0.12);">
+        Ever left a meeting thinking "that could've been an email," right before someone suggests solving it with an AI agent and the whole room nods along? I've learned AI isn't automatically the answer, sometimes it is, sometimes the customer just needs a checkbox, and the interesting part is figuring out which. My personal rule: if "low-hanging fruit," "quick win," and "AI agent" show up in the same sentence, someone has to ask what problem we're actually solving. I use AI every day to prototype and explore, but the best products still start with conversations, not prompts. Give me a messy whiteboard, curious people, and real users, that's where it gets fun.
+      </p>
       <div class="want-grid">
         <div>
           <h4>🎯 The role</h4>
           <ul>
-            <li>Senior PM — platform, infrastructure, or AI-driven products</li>
-            <li>A cool, in-house product company, Berlin-based</li>
-            <li>Established, not early-stage</li>
+            <li>Senior PM, focused on platform, infrastructure, or AI</li>
+            <li>An established, in-house product company</li>
+            <li>Berlin-based</li>
           </ul>
         </div>
         <div>
           <h4>🌱 The culture</h4>
           <ul>
-            <li>Diversity that genuinely matters, not a slogan</li>
-            <li>A real feedback culture</li>
-            <li>Room to learn, grow, experiment, and take initiative</li>
+            <li>A genuine commitment to diversity, not just messaging</li>
+            <li>Direct, constructive feedback as the norm</li>
+            <li>Space to experiment, take ownership, and keep growing</li>
           </ul>
         </div>
       </div>
